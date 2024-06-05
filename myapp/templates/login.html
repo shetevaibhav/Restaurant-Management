@@ -1,0 +1,32 @@
+{% extends "index.html"%} {% block start%}
+<div class="container mt-5">
+  <form class="col-6 mx-auto card p-3 shadow-lg" method="post">
+    {%csrf_token%}
+    <h1>Login</h1>
+    <hr />
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">UserName</label>
+      <input
+        type="text"
+        class="form-control"
+        id="userUsename"
+        aria-describedby="emailHelp"
+        name="username"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="userpassword"
+        aria-describedby="emailHelp"
+        name="password"
+      />
+    </div>
+    <p>don't have Account <a href="/register">Register</a></p>
+    <button type="submit" class="btn btn-info">Login</button>
+  </form>
+</div>
+
+{%endblock%}

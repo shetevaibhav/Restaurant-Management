@@ -1,0 +1,37 @@
+
+{% extends "index.html"%}
+
+{% block start%}
+<div class="container mt-5  card p-3 shadow-lg">
+   <div>
+    <form action="" method="GET">
+      <input name="search" type="text"  name="" class="form-control" placeholder="Search_Food"/></br>
+      <button type="submit" class="btn btn-info">Search</button>
+    </form>
+   </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Receipe_Name</th>
+            <th scope="col">receipe_description</th>
+            <th scope="col">receipe_image</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for receipe in receipedata %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{receipe.receipe_name}}</td>
+            <td>{{receipe.receipe_description}}</td>
+            <td><img src="{{receipe.receipe_image}}" style="height:100px" alt=""></td>
+            <td><a href="deletereceipe/{{receipe.id}}"" class="btn btn-danger">Delete</a></td></br>
+            <td><a href="updatereceipe/{{receipe.id}}"" class="btn btn-dark">update</a></td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+</div>
+
+{%endblock%}
